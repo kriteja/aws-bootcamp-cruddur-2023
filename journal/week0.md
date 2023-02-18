@@ -32,7 +32,9 @@ msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi
 
 ![Conceptual Diagram](https://user-images.githubusercontent.com/40818088/219865768-9c0a6ee4-e9cf-496f-88b3-544c72759ba6.PNG)
 
-- Detailed recreate Logical Architectural Deisgn of Cruddur App. 
+### 4. Recreate Logical Architectural Deisgn
+
+- A detailed Logical Architectural Deisgn of Cruddur App. 
 
 ![Logical Diagram](https://user-images.githubusercontent.com/40818088/219865806-8aab35fb-20a4-4da2-b13d-b02298f61ad7.PNG)
 
