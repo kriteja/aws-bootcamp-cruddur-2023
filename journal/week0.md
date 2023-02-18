@@ -6,8 +6,8 @@
         - [Create IAM user and Generate AWS Credentials](#create-iam-user-and-generate-aws-credentials)
         - [Set Env Vars](#set-env-vars)
 3. [Create a Budget in AWS Account](#2-create-a-budget-in-aws-account)
-4. [Recreate Conceptual Architectural Deisgn](#3-recreate-conceptual-architectural-deisgn)
-5. [Recreate Logical Architectural Deisgn](#4-recreate-logical-architectural-deisgn)
+4. [Recreate Conceptual Architectural Design](#3-recreate-conceptual-architectural-design)
+5. [Recreate Logical Architectural Design](#4-recreate-logical-architectural-design)
 
 
 
@@ -93,16 +93,16 @@ aws sts get-caller-identity
 
 ![Budget Alerts](https://user-images.githubusercontent.com/40818088/219874656-1f51ea32-4149-417b-bacf-61cc1c6f1652.PNG)
 
-### 3. Recreate Conceptual Architectural Deisgn
+### 3. Recreate Conceptual Architectural Design
 
 - A rough Conceptual Architectural representation of Cruddur App. 
     - Lucid chart link - [Conceptual Architectural Diagram](https://lucid.app/lucidchart/ade1b5c0-f197-4531-af69-595fd108fab4/edit?viewport_loc=-458%2C-456%2C2936%2C1381%2C0_0&invitationId=inv_661ffc19-233b-4456-a625-e1559d3d2140)
 
 ![Conceptual Diagram](https://user-images.githubusercontent.com/40818088/219865768-9c0a6ee4-e9cf-496f-88b3-544c72759ba6.PNG)
 
-### 4. Recreate Logical Architectural Deisgn
+### 4. Recreate Logical Architectural Design
 
-- A detailed Logical Architectural Deisgn of Cruddur App. 
+- A detailed Logical Architectural Design of Cruddur App. 
     - Lucid chart link - [Logical Architectural Diagram](https://lucid.app/lucidchart/ade1b5c0-f197-4531-af69-595fd108fab4/edit?viewport_loc=-1600%2C-621%2C3500%2C1647%2CQqkyQg5f_pXj&invitationId=inv_661ffc19-233b-4456-a625-e1559d3d2140)
 
 ![Logical Diagram 1](https://user-images.githubusercontent.com/40818088/219873927-18dbcad0-e74e-4c58-b26a-9f39b303bae5.PNG)
