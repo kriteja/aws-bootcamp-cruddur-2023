@@ -13,6 +13,10 @@
 msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi
 ```
 - Verify the installation by comand `aws`
+- If you receive below error, try relaunching the Command Prompt. 
+
+`'aws' is not recognized as an internal or external command,
+operable program or batch file.`
 
 ![AWS CLI in Win10](https://user-images.githubusercontent.com/40818088/219865329-ca746071-0c9b-47a8-8d2c-d4fae780e76f.PNG)
 
