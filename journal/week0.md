@@ -95,13 +95,15 @@ aws sts get-caller-identity
 
 ### 3. Recreate Conceptual Architectural Deisgn
 
-- A rough architectural representation of Cruddur App. 
+- A rough Conceptual Architectural representation of Cruddur App. 
+    - Lucid chart link - [Conceptual Architectural Diagram](https://lucid.app/lucidchart/ade1b5c0-f197-4531-af69-595fd108fab4/edit?viewport_loc=-458%2C-456%2C2936%2C1381%2C0_0&invitationId=inv_661ffc19-233b-4456-a625-e1559d3d2140)
 
 ![Conceptual Diagram](https://user-images.githubusercontent.com/40818088/219865768-9c0a6ee4-e9cf-496f-88b3-544c72759ba6.PNG)
 
 ### 4. Recreate Logical Architectural Deisgn
 
 - A detailed Logical Architectural Deisgn of Cruddur App. 
+    - Lucid chart link - [Logical Architectural Diagram](https://lucid.app/lucidchart/ade1b5c0-f197-4531-af69-595fd108fab4/edit?viewport_loc=-1600%2C-621%2C3500%2C1647%2CQqkyQg5f_pXj&invitationId=inv_661ffc19-233b-4456-a625-e1559d3d2140)
 
 ![Logical Diagram 1](https://user-images.githubusercontent.com/40818088/219873927-18dbcad0-e74e-4c58-b26a-9f39b303bae5.PNG)
 
