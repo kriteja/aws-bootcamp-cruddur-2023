@@ -1,8 +1,10 @@
 # Week 0 — Billing and Architecture
 ## Homework Tasks
 1. [AWS Command Line Interface (AWS CLI) installation & verification on GitPod and Desktop](#1-aws-cli-installation--verification-on-desktop)
-    - [AWS CLI installation on Desktop]
-    - AWS CLI installation on Gitpod
+    - [AWS CLI installation on Desktop](#aws-cli-installation-on-desktop)
+    - [AWS CLI installation on Gitpod](#aws-cli-installation-on-gitpod)
+        - [Create IAM user and Generate AWS Credentials](#create-iam-user-and-generate-aws-credentials)
+        - [Set Env Vars](#set-env-vars)
 3. [Create a Budget in AWS Account](#2-create-a-budget-in-aws-account)
 4. [Recreate Conceptual Architectural Deisgn](#3-recreate-conceptual-architectural-deisgn)
 5. [Recreate Logical Architectural Deisgn](#4-recreate-logical-architectural-deisgn)
