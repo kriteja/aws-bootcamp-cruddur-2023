@@ -28,7 +28,7 @@ operable program or batch file.`
 
 - Budget alerts
 
-![Budget Alerts](https://user-images.githubusercontent.com/40818088/219865710-9d55ccdd-9480-4d7d-8afe-8096da4660d2.PNG)
+![Budget Alerts](https://user-images.githubusercontent.com/40818088/219874656-1f51ea32-4149-417b-bacf-61cc1c6f1652.PNG)
 
 ### 3. Recreate Conceptual Architectural Deisgn
 
@@ -40,7 +40,8 @@ operable program or batch file.`
 
 - A detailed Logical Architectural Deisgn of Cruddur App. 
 
-![Logical Diagram](https://user-images.githubusercontent.com/40818088/219865806-8aab35fb-20a4-4da2-b13d-b02298f61ad7.PNG)
+![Logical Diagram 1](https://user-images.githubusercontent.com/40818088/219873927-18dbcad0-e74e-4c58-b26a-9f39b303bae5.PNG)
+
 
 
 
