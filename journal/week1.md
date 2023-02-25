@@ -1,18 +1,13 @@
 # Week 1 — App Containerization
 
-## References
+1. Containerize Backend
+ - Run Python
+ - Add Dockerfile
+ - Build Container
+ - Run Container
+ - 
+ 
 
-Good Article for Debugging Connection Refused
-https://pythonspeed.com/articles/docker-connection-refused/
-
-
-## VSCode Docker Extension
-
-Docker for VSCode makes it easy to work with Docker
-
-https://code.visualstudio.com/docs/containers/overview
-
-> Gitpod is preinstalled with theis extension
 
 ## Containerize Backend
 
