@@ -1,12 +1,24 @@
 # Week 1 — App Containerization
 
 1. Containerize Backend
- - Run Python
- - Add Dockerfile
- - Build Container
- - Run Container
- - 
- 
+   - Run Python
+   - Add Dockerfile
+   - Build Container
+   - Run Container
+2. Containerize Frontend
+   - Run Python
+   - Add Dockerfile
+   - Build Container
+   - Run Container
+3. Multiple Containers
+   - Create a docker-compose file
+   - Adding DynamoDB Local and Postgres
+      - DynamoDB Local
+      - Postgres
+       - To install the postgres client into Gitpod
+ 4. Volumes
+    - Directory volume mapping
+    - Named volume mapping 
 
 
 ## Containerize Backend
