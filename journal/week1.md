@@ -1,5 +1,9 @@
 # Week 1 — App Containerization
 
+## Summary of Week 1:
+-  We're trying to containerize both frontend and backend applications and ensure they are running. Once done, we're going to orchestrate multiple containers to run side by side by writing a `docker-compose` file. Furthermore, mounting the directories so we can make changes while we code.
+
+## Homework tasks: 
 1. Containerize Backend
    - Run Python
    - Add Dockerfile
