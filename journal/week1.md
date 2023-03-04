@@ -23,7 +23,13 @@
  4. [Volumes](#volumes)
     - Directory volume mapping
     - Named volume mapping 
-
+    - 
+## Additional tasks: 
+1. Creation of notification feature (Backend & Frontend) 
+2. Write a Flask Backend Endpoint for Notifications
+3. Write a React Page for Notifications
+4. Run DynamoDB Local Container and ensure it works
+5. Run Postgres Container and ensure it works
 
 ## Containerize Backend
 
@@ -334,6 +340,24 @@ Frontend Port working as expected :heavy_check_mark:
 All ports :heavy_check_mark: 
 
 ![All ports](https://user-images.githubusercontent.com/40818088/222913219-9eab9323-bda5-4ce3-b702-27f1fb44201c.PNG)
+
+## Additional tasks: 
+
+1. [Creation of notification feature](https://www.youtube.com/watch?v=k-_o0cCpksk&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=27) with [Open API](www.openapis.org)
+2. [Write a Flask Backend Endpoint for Notifications](https://www.youtube.com/watch?v=k-_o0cCpksk&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=27)
+3. [Write a React Page for Notifications](https://www.youtube.com/watch?v=k-_o0cCpksk&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=27)
+4. [Run DynamoDB Local Container and Postgres container ensure both works](https://www.youtube.com/watch?v=CbQNMaa6zTg&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=28)
+
+---
+
+Loggedin View of Crudder :heavy_check_mark: 
+
+![Logedin view](https://user-images.githubusercontent.com/40818088/222915083-1f21619e-2d55-46f1-a5ac-991ed0105870.PNG)
+
+Posted a test Crud :heavy_check_mark: 
+
+![Test crud](https://user-images.githubusercontent.com/40818088/222915103-e4f49135-27ad-4072-96e1-7f88ed4549b5.PNG)
+
 
 
 
