@@ -6,21 +6,21 @@
 ## Homework tasks: 
 1. [Containerize Backend](#containerize-backend)
    - [Run Python](#run-python)
-   - Add Dockerfile - Backend
-   - Build Container - Backend
-   - Run Container
-2. Containerize Frontend
-   - Run NPM Install
-   - Add Dockerfile - Frontend
-   - Build Container - Frontend
-   - Run Container
+   - [Add Dockerfile - Backend](#add-dockerfile---backend)
+   - [Build Container - Backend](#build-container---backend)
+   - [Run Container](#run-container)
+2. [Containerize Frontend](#containerize-frontend)
+   - [Run NPM Install](#run-npm-install)
+   - [Add Dockerfile - Frontend](#create-docker-file)
+   - [Build Container - Frontend](#build-container---frontend)
+   - [Run Container - Frontend](#run-container---frontend)
 3. Multiple Containers
-   - Create a docker-compose file
-   - Adding DynamoDB Local and Postgres
-      - DynamoDB Local
-      - Postgres
+   - [Create a docker-compose file](#create-a-docker-compose-file)
+   - [Adding DynamoDB Local and Postgres](#adding-dynamodb-local-and-postgres)
+      - [Postgres](#postgres)
        - To install the postgres client into Gitpod
- 4. Volumes
+      - [DynamoDB Local](#dynamodb-local)
+ 4. [Volumes](#volumes)
     - Directory volume mapping
     - Named volume mapping 
 
