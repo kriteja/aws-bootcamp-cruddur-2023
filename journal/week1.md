@@ -26,7 +26,7 @@
 
 
 ## [Additional tasks:](#additional-tasks-1) 
-1. Creation of notification feature (Backend & Frontend) 
+1. Creation of notification feature (Backend & Frontend) with Open API 
 2. Write a Flask Backend Endpoint for Notifications
 3. Write a React Page for Notifications
 4. Run DynamoDB Local Container and ensure it works
