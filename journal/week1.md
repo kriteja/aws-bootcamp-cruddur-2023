@@ -1,13 +1,36 @@
 # Week 1 — App Containerization
 
-1. Containerize Backend
- - Run Python
- - Add Dockerfile
- - Build Container
- - Run Container
- - 
- 
+## Summary of Week 1:
+-  We're trying to containerize both frontend and backend applications and ensure they are running. Once done, we're going to orchestrate multiple containers to run side by side by writing a `docker-compose` file. Furthermore, mounting the directories so we can make changes while we code.
 
+## Homework tasks: 
+1. [Containerize Backend](#containerize-backend)
+   - [Run Python](#run-python)
+   - [Add Dockerfile - Backend](#add-dockerfile---backend)
+   - [Build Container - Backend](#build-container---backend)
+   - [Run Container](#run-container)
+2. [Containerize Frontend](#containerize-frontend)
+   - [Run NPM Install](#run-npm-install)
+   - [Add Dockerfile - Frontend](#create-docker-file)
+   - [Build Container - Frontend](#build-container---frontend)
+   - [Run Container - Frontend](#run-container---frontend)
+3. Multiple Containers
+   - [Create a docker-compose file](#create-a-docker-compose-file)
+   - [Adding DynamoDB Local and Postgres](#adding-dynamodb-local-and-postgres)
+      - [Postgres](#postgres)
+       - To install the postgres client into Gitpod
+      - [DynamoDB Local](#dynamodb-local)
+ 4. [Volumes](#volumes)
+    - Directory volume mapping
+    - Named volume mapping 
+
+
+## [Additional tasks:](#additional-tasks-1) 
+1. Creation of notification feature (Backend & Frontend) with Open API 
+2. Write a Flask Backend Endpoint for Notifications
+3. Write a React Page for Notifications
+4. Run DynamoDB Local Container and ensure it works
+5. Run Postgres Container and ensure it works
 
 ## Containerize Backend
 
@@ -26,11 +49,13 @@ cd ..
 - append to the url to `/api/activities/home`
 - you should get back json
 
+![URL 404](https://user-images.githubusercontent.com/40818088/222906445-94c686a7-e9ae-4923-8fd3-ede9d04cedbd.PNG)
 
 
-### Add Dockerfile
 
-Create a file here: `backend-flask/Dockerfile`
+### Add Dockerfile - Backend
+
+Create a Dockerfile in the following path: `backend-flask/Dockerfile`
 
 ```dockerfile
 FROM python:3.10-slim-buster
@@ -48,11 +73,13 @@ EXPOSE ${PORT}
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"]
 ```
 
-### Build Container
+### Build Container - Backend
 
 ```sh
 docker build -t  backend-flask ./backend-flask
 ```
+
+![Build container](https://user-images.githubusercontent.com/40818088/222909032-eb2ebc57-fb0b-462b-ab77-7948a39b3dea.PNG)
 
 ### Run Container
 
@@ -167,13 +194,16 @@ EXPOSE ${PORT}
 CMD ["npm", "start"]
 ```
 
-### Build Container
+### Build Container - Frontend
 
 ```sh
 docker build -t frontend-react-js ./frontend-react-js
 ```
 
-### Run Container
+![Build container](https://user-images.githubusercontent.com/40818088/222913364-21e02652-857c-419f-a28e-badc69f17c06.PNG)
+
+
+### Run Container - Frontend
 
 ```sh
 docker run -p 3000:3000 -d frontend-react-js
@@ -251,6 +281,9 @@ To install the postgres client into Gitpod
       sudo apt install -y postgresql-client-13 libpq-dev
 ```
 
+![pqsl](https://user-images.githubusercontent.com/40818088/222913330-25006756-4183-4aa6-8ddc-d61ac642b5bb.PNG)
+
+
 ### DynamoDB Local
 
 ```yaml
@@ -291,3 +324,41 @@ volumes:
   db:
     driver: local
 ```
+---
+
+Backend Port working as expected :heavy_check_mark:
+
+![4567 Working](https://user-images.githubusercontent.com/40818088/222912558-9c4336f9-6bc2-4f0e-9b75-a521087c1ff8.PNG)
+
+---
+
+Frontend Port working as expected :heavy_check_mark:
+
+![3000 Working](https://user-images.githubusercontent.com/40818088/222912977-910f8229-7f4e-4540-a77f-a0e9f7557f3e.PNG)
+
+---
+
+All ports :heavy_check_mark: 
+
+![All ports](https://user-images.githubusercontent.com/40818088/222913219-9eab9323-bda5-4ce3-b702-27f1fb44201c.PNG)
+
+## Additional tasks: 
+
+1. [Creation of notification feature](https://www.youtube.com/watch?v=k-_o0cCpksk&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=27) with [Open API](www.openapis.org)
+2. [Write a Flask Backend Endpoint for Notifications](https://www.youtube.com/watch?v=k-_o0cCpksk&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=27)
+3. [Write a React Page for Notifications](https://www.youtube.com/watch?v=k-_o0cCpksk&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=27)
+4. [Run DynamoDB Local Container and Postgres container ensure both works](https://www.youtube.com/watch?v=CbQNMaa6zTg&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=28)
+
+---
+
+Loggedin View of Crudder :heavy_check_mark: 
+
+![Logedin view](https://user-images.githubusercontent.com/40818088/222915083-1f21619e-2d55-46f1-a5ac-991ed0105870.PNG)
+
+Posted a test Crud :heavy_check_mark: 
+
+![Test crud](https://user-images.githubusercontent.com/40818088/222915103-e4f49135-27ad-4072-96e1-7f88ed4549b5.PNG)
+
+
+
+
