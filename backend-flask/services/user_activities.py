@@ -1,10 +1,14 @@
 from datetime import datetime, timedelta, timezone
 class UserActivities:
   def run(user_handle):
+    # X-Ray..........
+    segment = xray_recorder.begin_segment('user-activities')
+    
     model = {
-      'errors': None,
-      'data': None
+       'errors': None,
+        'data': None
     }
+
 
     now = datetime.now(timezone.utc).astimezone()
 
@@ -20,4 +24,14 @@ class UserActivities:
         'expires_at': (now + timedelta(days=31)).isoformat()
       }]
       model['data'] = results
+    
+    subsegment = xray_recorder.begin_subsegment('mock-data')
+    # X-Ray..............
+    dict = {
+      "now":now.isoformat(),
+      "results-size": len(model['data'])
+    } 
+    subsegment.put_metadata('key', dict, 'namespace')
+
     return model
+    
