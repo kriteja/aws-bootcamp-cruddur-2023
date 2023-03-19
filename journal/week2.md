@@ -117,7 +117,30 @@ aws xray create-group \
 
 ![X-Ray resource created in AWS Cloudwatch](https://user-images.githubusercontent.com/40818088/226206152-d1690a32-30f3-4b5f-aeb8-06f0b1b6c3fd.PNG)
 
+- Create a sampling rule with below
+```
+aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
+```
+- Install [X-Ray daemon](https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html) to docker-compose.yml
+```
+  xray-daemon:
+    image: "amazon/aws-xray-daemon"
+    environment:
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      AWS_REGION: "us-east-1"
+    command:
+      - "xray -o -b xray-daemon:2000"
+    ports:
+      - 2000:2000/udp
+```
 
+## 5. Observe X-Ray traces within the AWS Console
+
+- ![Instrument X-Ray Mock-Data](https://user-images.githubusercontent.com/40818088/226206611-1f16fa08-97c5-4a26-b462-c780de3dfcfb.PNG)
+
+## 6. Integrate Rollbar for Error Logging
+- 
 
 
 
