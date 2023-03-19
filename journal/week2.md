@@ -56,9 +56,67 @@ OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
 OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
 OTEL_SERVICE_NAME: "${HONEYCOMB_SERVICE_NAME}"
 ```
-- :heavy_check_mark: *Honeycomb received the trace*
+
+## 2. Run queries to explore traces within Honeycomb.io
+
+- :heavy_check_mark: Honeycomb received the trace
 
 ![mock data honeycomb](https://user-images.githubusercontent.com/40818088/226205314-814518b0-e570-4765-af98-b343d3e1f1ef.PNG)
+
+- :heavy_check_mark: Honeycomb HeatMap
+
+![Heatmap](https://user-images.githubusercontent.com/40818088/226205540-a1322b34-b147-45b2-a99c-8448e83b09c3.PNG)
+
+## 3. Instrument AWS X-Ray into backend flask application
+- Add `aws-xray-sdk` to requirements.txt
+- Install Python dependencies 
+```bash
+pip install -r requirements.txt
+```
+- Add the below to `app.py`
+```py
+from aws_xray_sdk.core import xray_recorder
+from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
+
+xray_url = os.getenv("AWS_XRAY_URL")
+xray_recorder.configure(service='Cruddur', dynamic_naming=xray_url)
+XRayMiddleware(app, xray_recorder)
+```
+- Setup [AWS X-Ray](https://aws.amazon.com/xray/) resources for sampling data by adding the below to `aws/json/xray.json`
+```json
+{
+  "SamplingRule": {
+      "RuleName": "Cruddur",
+      "ResourceARN": "*",
+      "Priority": 9000,
+      "FixedRate": 0.1,
+      "ReservoirSize": 5,
+      "ServiceName": "Cruddur",
+      "ServiceType": "*",
+      "Host": "*",
+      "HTTPMethod": "*",
+      "URLPath": "*",
+      "Version": 1
+  }
+}
+```
+
+![Setup X-Ray Resources](https://user-images.githubusercontent.com/40818088/226206052-a6e82b2f-dc4c-4728-8190-ecfe42837185.PNG)
+
+- Establishing connection between AWS X-Ray and IAM User and creating a X-Ray Group
+```bash
+aws xray create-group \
+   --group-name "Cruddur" \
+   --filter-expression "service(\"backend-flask\")"
+```
+- X-Ray Group created message in GitPod terminal
+
+![X-Ray resource created](https://user-images.githubusercontent.com/40818088/226206120-8cbcbc3f-2633-4e83-8819-11c1844fd246.PNG)
+
+- X-Ray Group in AWS Console
+
+![X-Ray resource created in AWS Cloudwatch](https://user-images.githubusercontent.com/40818088/226206152-d1690a32-30f3-4b5f-aeb8-06f0b1b6c3fd.PNG)
+
 
 
 
