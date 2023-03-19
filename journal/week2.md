@@ -22,13 +22,11 @@ Implement distributed tracing as it will become difficult to pinpoint issue and 
 - Set Honeycomb API Keys as environment variables using GitPod using the below code
 ```bash
 export HONEYCOMB_API_KEY=""
-```
-- Verify the same
-```bash
+export HONEYCOMB_SERVICE_NAME="Cruddur"
 gp env HONEYCOMB_API_KEY=""
+gp env HONEYCOMB_SERVICE_NAME="Cruddur"
 ```
-- Instrument the project application to send Telemetry data to Honeycomb server. 
-  - [View these instructions in Honeycomb Docs.](https://docs.honeycomb.io/quickstart/#step-3-instrument-your-application-to-send-telemetry-data-to-honeycomb)
+- Instrument the project application to send Telemetry data to Honeycomb server. *[Honeycomb Documentation](https://docs.honeycomb.io/quickstart/#step-3-instrument-your-application-to-send-telemetry-data-to-honeycomb)*
 - Add the following to `requirements.txt`
 ```
 opentelemetry-api 
@@ -37,6 +35,8 @@ opentelemetry-exporter-otlp-proto-http
 opentelemetry-instrumentation-flask 
 opentelemetry-instrumentation-requests
 ```
+![Open Telementary install](https://user-images.githubusercontent.com/40818088/226205123-2e643259-0c96-4237-984b-d40207321b1e.PNG)
+
 - Install the dependencies using the below command 
 ```
 pip install -r requirements.txt
@@ -50,9 +50,15 @@ from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExport
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 ```
+- Add the following environment variables to `backend-flask` in docker compose file.
+```bash
+OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
+OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
+OTEL_SERVICE_NAME: "${HONEYCOMB_SERVICE_NAME}"
+```
+- :heavy_check_mark: *Honeycomb received the trace*
 
-
-
+![mock data honeycomb](https://user-images.githubusercontent.com/40818088/226205314-814518b0-e570-4765-af98-b343d3e1f1ef.PNG)
 
 
 
