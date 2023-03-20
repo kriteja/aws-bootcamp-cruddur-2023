@@ -202,6 +202,39 @@ def rollbar_test():
 
 ![Rollbar error](https://user-images.githubusercontent.com/40818088/226293531-271a75ca-b560-4d51-8e0c-e47c6bd71409.PNG)
 
+## 8. Install WatchTower and write a custom logger to send application log data to CloudWatch Log group
+- Setup watchtower lib in backend-flask `requirements.txt`
+```
+watchtower
+```
+- Install the dependencies 
+```
+pip install -r requirements.txt
+```
+- Add the following code to `app.py`
+```py
+import watchtower
+import logging
+from time import strftim
+```
+```py
+# Configuring Logger to Use CloudWatch
+LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.DEBUG)
+console_handler = logging.StreamHandler()
+cw_handler = watchtower.CloudWatchLogHandler(log_group='cruddur')
+LOGGER.addHandler(console_handler)
+LOGGER.addHandler(cw_handler)
+LOGGER.info("some message")
+```
+```py
+@app.after_request
+def after_request(response):
+    timestamp = strftime('[%Y-%b-%d %H:%M]')
+    LOGGER.error('%s %s %s %s %s %s', timestamp, request.remote_addr, request.method, request.scheme, request.full_path, response.status)
+    return response
+```
+
 
 
 
