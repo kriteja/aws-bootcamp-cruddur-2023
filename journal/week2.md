@@ -140,8 +140,24 @@ aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 - ![Instrument X-Ray Mock-Data](https://user-images.githubusercontent.com/40818088/226206611-1f16fa08-97c5-4a26-b462-c780de3dfcfb.PNG)
 
 ## 6. Integrate Rollbar for Error Logging
-- 
-
+- Added blinker and rollbar libraries to `requirements.txt`
+```
+blinker
+rollbar
+```
+- Install the dependencies
+```
+pip install -r requirements.txt
+```
+- Set Rollbar token as envirnment variables 
+```
+export ROLLBAR_ACCESS_TOKEN=""
+gp env ROLLBAR_ACCESS_TOKEN=""
+```
+- Add `ROLLBAR_ACCESS_TOKEN` enviroment variable to backend-flask service in `docker-compose.yml`
+```
+ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"
+```
 
 
 
