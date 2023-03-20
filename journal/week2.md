@@ -234,6 +234,27 @@ def after_request(response):
     LOGGER.error('%s %s %s %s %s %s', timestamp, request.remote_addr, request.method, request.scheme, request.full_path, response.status)
     return response
 ```
+- Log a message into API endpoint 
+```bash
+LOGGER.info('Hello Cloudwatch! from  /api/activities/home')
+```
+- Set environmental variables for CloudWatch logging 
+```bash
+      AWS_DEFAULT_REGION: "${AWS_DEFAULT_REGION}"
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      
+```
+- :heavy_check_mark: Cloudwatch trace captured
+
+![Trace in CloudWatch](https://user-images.githubusercontent.com/40818088/226297077-05dbd48c-b229-4185-99ac-c16fe72c37db.PNG)
+
+- :heavy_check_mark: Test log in Cloudwatch
+
+![Test log in CloudWatch](https://user-images.githubusercontent.com/40818088/226297195-5a7a1381-186b-4ccf-8e7b-794da71763fc.PNG)
+
+![Mock_data](https://user-images.githubusercontent.com/40818088/226297272-e0e5f55b-6064-4d0b-be3a-377f2ac1a3be.PNG)
+
 
 
 
