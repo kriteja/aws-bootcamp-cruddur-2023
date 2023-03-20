@@ -158,6 +158,49 @@ gp env ROLLBAR_ACCESS_TOKEN=""
 ```
 ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"
 ```
+- Import Rollbar libraries
+```bash
+import rollbar
+import rollbar.contrib.flask
+from flask import got_request_exception
+```
+- Rollbar listener
+```bash
+rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
+@app.before_first_request
+def init_rollbar():
+    """init rollbar module"""
+    rollbar.init(
+        # access token
+        rollbar_access_token,
+        # environment name
+        'production',
+        # server root directory, makes tracebacks prettier
+        root=os.path.dirname(os.path.realpath(__file__)),
+        # flask already sets up logging
+        allow_logging_basic_config=False)
+
+    # send exceptions from `app` to rollbar, using flask's signal system.
+    got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
+```
+- Adding endpoint to test the Rollbar to `app.py`
+```bash
+@app.route('/rollbar/test')
+def rollbar_test():
+    rollbar.report_message('Hello World!', 'warning')
+    return "Hello World!"
+```
+- :heavy_check_mark: Hello World trace in Rollbar 
+
+![Rollbar Hello World](https://user-images.githubusercontent.com/40818088/226293166-21c137ee-9d65-4aa9-93db-2157791f479e.PNG)
+
+- :heavy_check_mark: Hello World output 
+
+![Rollbar test](https://user-images.githubusercontent.com/40818088/226293351-9f09ae09-9973-4467-b1d9-6945b251472b.PNG)
+
+## 7. Trigger an error an observe an error with Rollbar
+
+![Rollbar error](https://user-images.githubusercontent.com/40818088/226293531-271a75ca-b560-4d51-8e0c-e47c6bd71409.PNG)
 
 
 
